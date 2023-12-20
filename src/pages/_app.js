@@ -9,6 +9,10 @@ import { useNProgress } from 'src/hooks/use-nprogress';
 import { createTheme } from 'src/theme';
 import { createEmotionCache } from 'src/utils/create-emotion-cache';
 import { SessionProvider } from "next-auth/react"
+
+import { getServerSession } from "next-auth/next";
+import { options } from "../pages/api/auth/[...nextauth]"
+
 import 'simplebar-react/dist/simplebar.min.css';
 import '../styles/main.css'
 
@@ -16,7 +20,7 @@ const clientSideEmotionCache = createEmotionCache();
 
 const SplashScreen = () => null;
 
-const App = (props) => {
+const App = async (props) => {
 
   
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
@@ -30,6 +34,8 @@ const App = (props) => {
       fontFamily: 'Poppins-Regular',
     },
   });
+
+  const session = await getServerSession(options)
 
   return (
     
@@ -51,7 +57,7 @@ const App = (props) => {
               {
                 (auth) => auth.isLoading
                   ? <SplashScreen />
-                  : getLayout(<SessionProvider session={pageProps.session}><Component {...pageProps} /></SessionProvider>)
+                  : getLayout(<SessionProvider session={session} ><Component {...pageProps} /></SessionProvider>)
               }
             </AuthConsumer>
           </ThemeProvider>

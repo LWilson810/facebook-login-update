@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth';
 import FacebookProvider from 'next-auth/providers/facebook';
 
-const options = {
+export const options = {
     providers: [
         FacebookProvider({
           clientId: "777565144211400",
