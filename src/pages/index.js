@@ -24,6 +24,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import { useSession, signIn, signOut } from 'next-auth/react'
 import Register from './auth/register'
+import { useSession } from "next-auth/client"
 
 import ResetPassword from './auth/reset'
 
@@ -37,7 +38,7 @@ const Home = () => {
   const [signin, setSignin] = useState(false)
   const [pass, setPass] = useState(false)
 
-  const { data: session } = useSession();
+  const [session, loading] = useSession()
 
   const router = useRouter();
 

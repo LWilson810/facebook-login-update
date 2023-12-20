@@ -8,7 +8,7 @@ import { AuthConsumer, AuthProvider } from 'src/contexts/auth-context';
 import { useNProgress } from 'src/hooks/use-nprogress';
 import { createTheme } from 'src/theme';
 import { createEmotionCache } from 'src/utils/create-emotion-cache';
-import { SessionProvider } from "next-auth/react"
+import { Provider } from 'next-auth/client';
 import 'simplebar-react/dist/simplebar.min.css';
 import '../styles/main.css'
 
@@ -32,7 +32,7 @@ const App = (props) => {
   });
 
   return (
-    <SessionProvider session={pageProps.session}>
+    <Provider session={pageProps.session}>
     <CacheProvider value={emotionCache}>
       <Head>
         <title>
@@ -58,7 +58,7 @@ const App = (props) => {
         </AuthProvider>
       </LocalizationProvider>
     </CacheProvider>
-    </SessionProvider>
+    </Provider>
   );
 };
 
