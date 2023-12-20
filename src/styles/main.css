@@ -1,0 +1,57 @@
+.css-geod0p-MuiPaper-root-MuiDialog-paper {
+    background-color: black !important;
+}
+@font-face {
+  font-family: 'Poppins-Black';
+  src: url('/assets/fonts/Poppins-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Poppins-Regular' !important;
+}
+.css-pzyp6t {
+    background-color: black !important;
+}
+
+/* Styles for screens smaller than 600px */
+@media (max-width: 1199px) {
+    /* CSS rules for medium screens */
+    /* Example: */
+    img-search{
+        position: absolute;
+        top: 19vw;
+        left: 4vw,
+   
+    }
+  }
+@media (min-width: 1200px) and (max-width: 1980px) {
+    /* CSS rules for medium screens */
+    /* Example: */
+    img-search{
+        position: absolute;
+        top: 19vw;
+        left: 4vw,
+   
+    }
+
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: #ccc;
+    box-shadow: none;
+  }
+
+
+
+
+  
