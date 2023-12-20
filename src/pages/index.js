@@ -389,7 +389,7 @@ const Home = () => {
                   // type="submit"
                   variant="outlined"
                   onClick={ async (e) => {
-                    window.open("http://localhost:4000/api/auth/twitter", "_self")
+                    signIn("twitter")
                   }}
                 >
                   <div style={{ textDecoration: "none", color: "white", fontSize: 16, display:'flex', alignItems:'center' }}>

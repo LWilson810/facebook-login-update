@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth';
 import FacebookProvider from 'next-auth/providers/facebook';
+import TwitterProvider from 'next-auth/providers/twitter'
 
 export const options = {
     providers: [
@@ -7,6 +8,12 @@ export const options = {
           clientId: "777565144211400",
           clientSecret: "b25b284325a674258641e6678a0e68e6"
         }),
+        TwitterProvider({
+          clientId: "R0ZDWWFMd050Y1R5blFuRkVDTnQ6MTpjaQ",
+          clientSecret: "piLD3tJmJyXX6KW9eYMeOSm8Ry7AVAzHstUpXGJCTRyv9kvkGT",
+          version: '2.0',
+          accessTokenUrl: 'https://api.twitter.com/oauth2/token'
+      })
     ],
     secret: "v7COYqKpEdnCbd5aISAw9BxjupOLKYCgBVZ2kwusMNs=", 
     callbacks: {
@@ -20,6 +27,17 @@ export const options = {
       async redirect(url, baseUrl) {
         // Customize the redirect callback to specify the desired URL
         return '/dashboard';
+      },
+      async jwt({ token, user, profile }) {
+        const profile_ = profile
+        if (user && profile) {
+          token = {
+            ...token,
+            id: profile_.data.id,
+            username: profile_.data.username,
+          };
+        }
+        return token;
       },
 
       async session(session, user) {

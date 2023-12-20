@@ -9,16 +9,10 @@ import { OverviewStatistic } from 'src/sections/overview/overview-statistic.js';
 // import { OverviewTotalCustomers } from 'src/sections/overview/overview-total-customers';
 // import { OverviewTotalProfit } from 'src/sections/overview/overview-total-profit';
 import { OverviewActivity } from 'src/sections/overview/overview-activity';
-import { options } from './api/auth/[...nextauth].js';
-import { getServerSession } from "next-auth"
 
 const now = new Date();
 
-const Page = async () => {
-
-  console.log(await getServerSession(options))
-
-  return (
+const Page =  () =>  (
     <>
       <Head>
         <title>
@@ -130,12 +124,13 @@ const Page = async () => {
       </Box>
     </>
   );
-}
 
 Page.getLayout = (page) => (
   <DashboardLayout>
     {page}
   </DashboardLayout>
 );
+
+
 
 export default Page;
