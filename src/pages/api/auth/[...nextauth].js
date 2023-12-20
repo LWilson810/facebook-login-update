@@ -23,6 +23,8 @@ const options = {
       },
 
       async session(session, user) {
+        session.email = user.email;
+        session.name = user.name;
         return session
       },
     },
