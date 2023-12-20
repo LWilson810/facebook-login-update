@@ -36,12 +36,12 @@ const Home = () => {
   const [signin, setSignin] = useState(false)
   const [pass, setPass] = useState(false)
 
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   const router = useRouter();
 
-  if(session){
-    router.push('/dashboard');
-  }
+  // if(session){
+  //   router.push('/dashboard');
+  // }
 
   const handleClickSignUp = () => {
     setDialog(false)
