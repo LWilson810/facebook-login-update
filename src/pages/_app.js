@@ -8,7 +8,7 @@ import { AuthConsumer, AuthProvider } from 'src/contexts/auth-context';
 import { useNProgress } from 'src/hooks/use-nprogress';
 import { createTheme } from 'src/theme';
 import { createEmotionCache } from 'src/utils/create-emotion-cache';
-import { SessionProvider } from "next-auth/react"
+import { SessionProvider, getSession } from "next-auth/react"
 
 import 'simplebar-react/dist/simplebar.min.css';
 import '../styles/main.css'
@@ -22,7 +22,7 @@ const App = (props) => {
   
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
-  console.log(pageProps.session)
+  console.log(getSession())
   useNProgress();
 
   const getLayout = Component.getLayout ?? ((page) => page);
