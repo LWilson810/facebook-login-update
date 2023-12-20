@@ -22,7 +22,7 @@ const App = (props) => {
   
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
-  console.log(getSession())
+  console.log(pageProps.session)
   useNProgress();
 
   const getLayout = Component.getLayout ?? ((page) => page);

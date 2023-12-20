@@ -33,4 +33,4 @@ export const options = {
       // Set the callback URL to match the redirect URI in the Facebook Developer portal
 }
 
-export default (req, res) => NextAuth(req, res, options)
+export default NextAuth(options)
