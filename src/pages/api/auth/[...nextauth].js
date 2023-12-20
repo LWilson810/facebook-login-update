@@ -19,7 +19,7 @@ const options = {
   
       async redirect(url, baseUrl) {
         // Customize the redirect callback to specify the desired URL
-        return '/';
+        return '/dashboard';
       },
 
       async session(session, user) {

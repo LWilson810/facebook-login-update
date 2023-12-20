@@ -32,7 +32,7 @@ const App = (props) => {
   });
 
   return (
-    <SessionProvider session={pageProps.session}>
+    
     <CacheProvider value={emotionCache}>
       <Head>
         <title>
@@ -51,14 +51,13 @@ const App = (props) => {
               {
                 (auth) => auth.isLoading
                   ? <SplashScreen />
-                  : getLayout(<Component {...pageProps} />)
+                  : getLayout(<SessionProvider session={pageProps.session}><Component {...pageProps} /></SessionProvider>)
               }
             </AuthConsumer>
           </ThemeProvider>
         </AuthProvider>
       </LocalizationProvider>
     </CacheProvider>
-    </SessionProvider>
   );
 };
 
