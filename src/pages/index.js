@@ -31,15 +31,18 @@ const FlexBox = styled(Box)(() => ({ display: 'flex', alignItems: 'center' }));
 
 const Home = () => {
 
-  console.log("UUUUUUUUSSSSSSSSSSSSSSSEEEEEEEEEEEEEEEE",session.user);
+  
   const [dialog, setDialog] = useState(false)
   const [signup, setSignup] = useState(false)
   const [signin, setSignin] = useState(false)
   const [pass, setPass] = useState(false)
 
   const { data: session } = useSession();
+
   const router = useRouter();
 
+
+  console.log("UUUUUUUUSSSSSSSSSSSSSSSEEEEEEEEEEEEEEEE",session.user);
   if(session){
     router.push('/dashboard');
   }
