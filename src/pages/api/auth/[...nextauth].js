@@ -24,7 +24,7 @@ const options = {
 
       async session(session, user) {
         console.log("=============== Session ==============")
-        console.log(user)
+        console.log(session)
         session.email = user.email;
         session.name = user.name;
         return session
