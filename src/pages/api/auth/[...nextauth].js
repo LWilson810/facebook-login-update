@@ -12,7 +12,8 @@ export const options = {
           clientId: "R0ZDWWFMd050Y1R5blFuRkVDTnQ6MTpjaQ",
           clientSecret: "piLD3tJmJyXX6KW9eYMeOSm8Ry7AVAzHstUpXGJCTRyv9kvkGT",
           version: '2.0',
-          accessTokenUrl: 'https://api.twitter.com/oauth2/token'
+          accessTokenUrl: 'https://api.twitter.com/oauth2/token',
+          
       })
     ],
     secret: "v7COYqKpEdnCbd5aISAw9BxjupOLKYCgBVZ2kwusMNs=", 
