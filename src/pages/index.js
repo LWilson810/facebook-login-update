@@ -41,8 +41,6 @@ const Home = () => {
 
   const router = useRouter();
 
-
-  console.log("UUUUUUUUSSSSSSSSSSSSSSSEEEEEEEEEEEEEEEE",session);
   if(session){
     
     router.push('/dashboard');
